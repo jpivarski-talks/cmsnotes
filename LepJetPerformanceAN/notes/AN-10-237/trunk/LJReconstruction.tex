@@ -1,0 +1,42 @@
+\section{LepJet Reconstruction at CMS}
+LepJet are reconstructed from any predefined selection of tracks of charged particles. 
+The tracks used as input for the LepJet reconstruction are selected with a minimal set of quality requirements, ensuring a low fake rate and at the same time sufficient efficiency to reconstruct LepJets down to transverse momenta of a few GeV/c. 
+
+Muons are built by the standard CMS reconstruction, evaluating the different tracker muons selectors.
+Tracker muons  selectors require the matching of tracker tracks with at least one segment in the muon system.
+Requiring additional segments can reduce the fake rate of pion punch through.
+Eventually two final selectors of muons will be evaluated, one originated from the IP and the other could originate from long lived resonance and hence observed with a displaced vertex away from the IP.
+The collection originating from the IP further require the transverse and longitudinal distance to the primary vertex smaller than 2 mm and 10 mm respectively.  Finally, muons tracks with pT > 300 MeV/c are kept, ensuring an optimal reconstruction of low pT LepJets.
+
+A useful tool to characterize the jet reconstruction efficiency is the correspondence between the reconstructed jet and the true jet. This has been studied using the simulated MC gun of muon pairs and a resonance decaying at a certain boost at various angles.
+
+In Fig you can see the reconstruction efficiency of LepJet algo compare to the upper limit set by the muon reconstruction.
+
+In Fig. you see the efficiency of matching genjets to reco jets withing delta R < 0.5 as a function of the genjet pt
+
+In Figure you see the fraction of reconstructed LepJEts that are not match to genjets as a function of the LepJet reconstructed Pt
+
+
+
+It will interesting to study the LeptonJet tagging efficiency originating from different resonances emitted at differnt psuedo rapidity.  This was done by using a MC gun generating Jpsi particles where its mass was modified to 0.5GeV for various  LeptonJet algo cone sizes.
+
+
+Similarly an exercise was done to generate LeptonJets with 4 leptons in the final state by generating a resonance decaying to two Z bosons. The resonance mass was 1.5GeV and the Z was 0.5GeV
+
+
+
+
+A study of the performance of lepton jet wont be sufficient with out looking at the background.
+Running over inclusive muons samples and plot the following
+
+Fig: Distribution of the number of lepton jets (Y column is entries per nb-1)
+Fig: Distribution of number of lepton jets for few LepJet isolation criteria (sum Pt, ecal, hcal..)
+Fig: bkg efficiency of track iso vs. sumPt
+Fig: bkg efficiency of HCAL iso vs. value
+Fig: bkg efficiency of ECACL iso vs. value
+Fig:  muons in muon jets before and after isolation
+Y axis set to pb-1
+
+
+
+

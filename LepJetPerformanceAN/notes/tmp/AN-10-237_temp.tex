@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Style for CMS Computing / Physics Technical Design Reports
+%
+%   Lucas Taylor  4 Feb 2005,   Revised  12 Oct 2005
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  the following line is edited by the tdr script to change or to pass
+%  additional options:
+\documentclass[11pt,twoside,a4paper,an]{cms-tdr}
+\def\svnVersion{exported}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Common definitions
+%
+%  N.B. use of \providecommand rather than \newcommand means
+%       that a definition is ignored if already specified
+%
+%                                              L. Taylor 18 Feb 2005
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hyphenations (only need to add here if you get a nasty word break)
+%
+\hyphenation{env-iron-men-tal}%    just an example
+\hyphenation{had-ron-i-za-tion}
+\hyphenation{cal-or-i-me-ter}
+\hyphenation{de-vices}
+%
+% Hyphenations-end
+%% svn info. These are modified by svn at checkout time.
+% The last version of these macros found before the maketitle will be the one on the front page,
+% so only the main file is tracked.
+% Do not edit by hand!
+\RCS$Revision: 1.2 $
+\RCS$HeadURL: svn+ssh://valerieh@svn.cern.ch/reps/tdr2/notes/AN-10-175/trunk/AN-10-175.tex $
+\RCS$Id: AN-10-237.tex,v 1.2 2010/07/16 19:48:22 valerieh Exp $
+%%%%%%%%%%%%% ptdr definitions %%%%%%%%%%%%%%%%%%%%%
+\input{ptdr-definitions}
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+\cmsNoteHeader{AN-10-175} % This is over-written in the CMS environment: useful as preprint no. for export versions
+\title{Study of Lepton Jets Reconstruction Algorithms using pp collisions data collected at $\sqrt s $ = 7 TeV with CMS detector at LHC}% Force line breaks with \\
+
+%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
+\ifthenelse{\boolean{cms@external}}{%
+\author{Nadia Adam}\affiliation{Princeton University}
+\author{Boulahouache Chaouki}\affiliation{Rice University}
+\author{Valerie Halyo}\affiliation{Princeton University}
+\author{Adam Hunt}\affiliation{Princeton University}
+\author{Sergei Glyzer}\affiliation{Florida University}
+\author{Jim Prvarski}\affiliation{Texas AM}
+\author{...}\affiliation{XXX University}
+
+
+}
+{%
+%\address[neu]{Northeastern University}
+%\address[fnal]{Fermilab}
+%\address[cern]{CERN}
+%\author[neu]{George Alverson}\author[fnal]{Lucas Taylor}\author[cern]{A. Cern Person}
+}
+
+% please supply the date in yyyy/mm/dd format. Today has been
+% redefined to do so, but it should be fixed as of the final release date.
+% For papers and PAS, \today is taken as the date the head file (this one) was last modified according to svn: see the RCS Id string above.
+\date{\today}
+
+% Abstract processing:
+% 1. **DO NOT use \include or \input** to include the abstract: our abstract extractor will not search through other files than this one.
+% 2. **DO NOT use %** to comment out sections of the abstract: the extractor will still grab those lines (and they won't be comments any longer!).
+% 3. **DO NOT use tex macros** in the abstract: External TeX parsers used on the abstract don't understand them.
+
+\input Abstract.tex
+
+% Do not comment out the following hypersetup lines (metadata). They will disappear in NODRAFT mode and are needed by CDS.
+% Also: make sure that the values of the metadata items are sensible.
+\hypersetup{%
+/pdfauthor={Nadia Adam, Boulahouache Chaouki, Valerie Halyo, Adam Hunt, Sergei Glayzer .....},%
+/pdftitle={Study of Lepton Jets Reconstruction Algorithms using pp collisions data collected at $\sqrt s $ = 7 TeV with CMS detector at LHC},%
+pdfsubject={CMS},%
+pdfkeywords={CMS, physics, software, computing, JMET}}
+
+\maketitle %maketitle comes after all the front information has been supplied
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Begin text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input Introduction.tex
+\input MuonEfficiency.tex
+\input ColMuonReconstruction.tex
+\input LJAlgorithm.tex
+\input LJReconstruction.tex
+\input LJtagging.tex
+\input BackgroundStudy.tex
+\input ControlSample.tex
+\input Summary.tex
+
+\bibliography{auto_generated}   % will be created by the tdr script. 
+
+
+\end{document}
+
